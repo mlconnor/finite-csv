@@ -1,24 +1,13 @@
 var fs = require('fs');
 
-//var str = "";
-//var str = "ab,cd,\"ef\",\"gh\nijsk\"\n1,2,3,4\n@,#,\"$\"\nhello\"little";
-//str = " ";
-//var str= "a\nb\n\nc\n";
-//:183var buffer = str.split('');
-
-//console.log(str);
-
-//console.log(parseCSV(str));
-
-fs.readFile('/Users/a58179/tmp/GOAL_db_v1.csv', 'utf-8', function (err, data) {
-  if (err) throw err;
-  //console.log(data);
-  var result = parseCSV(data);
-  console.log(result.length);
-});
-
+/**
+ * This method will parse the CSV file
+ * based on RFC 4180.  I wrote this mostly
+ * to test out a Finite State Machine I've
+ * been thinking about.  A Bison or Jison 
+ * grammar would obviously be more concise.
+ */
 function parseCSV(str) {
-  //var buffer = str.split('');
   var position = 0;
   var field = null;
   var row = [];
@@ -232,4 +221,4 @@ function FiniteStateMachine(flow) {
   };
 }
 
-
+exports.parseCSV = parseCSV;
