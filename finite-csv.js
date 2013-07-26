@@ -201,7 +201,6 @@ function FiniteStateMachine(flow) {
         if ( t.event != eventName ) continue;
         if ( t.guard == undefined || t.guard() ) {
           relevant = t;
-          //console.log('t', t);
           break;
         }
       }
