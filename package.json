@@ -1,8 +1,8 @@
 {
   "name": "finite-csv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A CSV parser that uses a finite state machine and works with Excel CSV exports.",
-  "main": "phantalyzer.js",
+  "main": "finite-csv.js",
   "dependencies": {
   },
   "scripts": {
