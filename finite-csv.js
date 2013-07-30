@@ -220,4 +220,29 @@ function FiniteStateMachine(flow) {
   };
 }
 
+/**
+ * This awesome function will return an
+ * array of rows with the key values of
+ * each row matching the column header
+ * which should be provided in the first row.
+ */
+function csv_to_obj(records) {
+  var objects = [];
+  var header = [];
+  for ( var i = 0; i < records.length; i++ ) {
+    var values = records[i];
+    if ( i == 0 ) {
+      header = values;
+    } else {
+      var item = [];
+      for ( var recI = 0; recI < header.length; recI++ ) {
+	item[header[recI]] = recI < values.length ? values[recI] : "";
+      }
+      objects.push(item);
+    }
+  }
+  return objects;
+}
+
+exports.csv_to_obj = csv_to_obj;
 exports.parseCSV = parseCSV;
